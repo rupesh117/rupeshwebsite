@@ -1,76 +1,1623 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rupesh Sirvi Choudhary - Security Tester</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Rupesh Sirvi | AI Terminal Portfolio</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#020617;
+
+color:white;
+
+overflow-x:hidden;
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+linear-gradient(rgba(0,255,255,0.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,255,255,0.04) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+z-index:-3;
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+border-radius:50%;
+
+background:rgba(0,255,255,0.08);
+
+filter:blur(120px);
+
+top:-100px;
+left:-100px;
+
+z-index:-2;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+width:min(92%,1600px);
+
+margin:auto;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+z-index:999;
+
+background:rgba(0,0,0,0.4);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.navbar{
+
+min-height:85px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+}
+
+.logo{
+
+font-size:2rem;
+
+font-weight:700;
+
+color:#00ffff;
+}
+
+.nav-links{
+
+display:flex;
+
+gap:2rem;
+
+list-style:none;
+}
+
+.nav-links a{
+
+color:white;
+
+text-decoration:none;
+
+transition:0.3s;
+}
+
+.nav-links a:hover{
+
+color:#00ffff;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+padding:130px 0 80px;
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1.1fr;
+
+gap:4rem;
+
+align-items:center;
+}
+
+/* LEFT */
+
+.hero-left h3{
+
+color:#00ffff;
+
+letter-spacing:3px;
+
+margin-bottom:1rem;
+}
+
+.hero-left h1{
+
+font-size:clamp(3rem,8vw,7rem);
+
+line-height:1.1;
+}
+
+.hero-left h1 span{
+
+color:#00ffff;
+}
+
+.typing{
+
+margin-top:1rem;
+
+font-size:2rem;
+
+color:#8b5cf6;
+
+min-height:50px;
+}
+
+.hero-left p{
+
+margin-top:1.5rem;
+
+line-height:1.9;
+
+color:#cbd5e1;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+display:flex;
+
+gap:1rem;
+
+margin-top:2rem;
+
+flex-wrap:wrap;
+}
+
+.btn{
+
+padding:16px 28px;
+
+border-radius:14px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:0.4s;
+}
+
+.primary-btn{
+
+background:#00ffff;
+
+color:black;
+}
+
+.primary-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 30px rgba(0,255,255,0.4);
+}
+
+.secondary-btn{
+
+border:1px solid #00ffff;
+
+color:#00ffff;
+}
+
+.secondary-btn:hover{
+
+background:#00ffff;
+
+color:black;
+}
+
+/* =====================================================
+   TERMINAL
+===================================================== */
+
+.terminal{
+
+width:100%;
+
+height:760px;
+
+background:#0d1117;
+
+border-radius:24px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 0 50px rgba(0,255,255,0.08),
+inset 0 0 30px rgba(255,255,255,0.02);
+}
+
+/* NAVBAR */
+
+.terminal-top{
+
+height:58px;
+
+background:#161b22;
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 18px;
+}
+
+.terminal-controls{
+
+display:flex;
+
+gap:10px;
+}
+
+.dot{
+
+width:14px;
+height:14px;
+
+border-radius:50%;
+}
+
+.red{
+background:#ff5f56;
+}
+
+.yellow{
+background:#ffbd2e;
+}
+
+.green{
+background:#27c93f;
+}
+
+.terminal-title{
+
+font-family:monospace;
+
+color:#00ffff;
+}
+
+/* SCREEN */
+
+.terminal-screen{
+
+height:calc(100% - 58px);
+
+overflow-y:auto;
+
+padding:25px;
+
+font-family:monospace;
+
+background:
+radial-gradient(circle at top right,
+rgba(0,255,255,0.05),
+transparent 40%);
+}
+
+.terminal-screen::-webkit-scrollbar{
+width:5px;
+}
+
+.terminal-screen::-webkit-scrollbar-thumb{
+
+background:#00ffff;
+
+border-radius:10px;
+}
+
+/* COMMAND */
+
+.line{
+
+margin-top:18px;
+}
+
+.command-line{
+
+display:flex;
+
+gap:8px;
+
+flex-wrap:wrap;
+}
+
+.user{
+color:#00ff88;
+}
+
+.path{
+color:#38bdf8;
+}
+
+.symbol{
+color:white;
+}
+
+.command{
+color:white;
+}
+
+/* OUTPUT */
+
+.output{
+
+margin-top:8px;
+
+background:#111827;
+
+border-left:3px solid #00ffff;
+
+border-radius:12px;
+
+padding:14px;
+
+line-height:1.8;
+
+white-space:pre-wrap;
+
+color:#d1d5db;
+}
+
+/* INPUT */
+
+.input-wrapper{
+
+display:flex;
+
+gap:8px;
+
+margin-top:18px;
+
+align-items:center;
+}
+
+#terminalInput{
+
+background:transparent;
+
+border:none;
+
+outline:none;
+
+color:white;
+
+font-size:15px;
+
+font-family:monospace;
+
+width:100%;
+}
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+section{
+padding:120px 0;
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:4rem;
+}
+
+.section-title p{
+
+color:#00ffff;
+
+letter-spacing:3px;
+}
+
+.section-title h2{
+
+font-size:4rem;
+}
+
+.skills-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:2rem;
+}
+
+.skill-card{
+
+background:#0d1117;
+
+padding:2rem;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+transition:0.4s;
+}
+
+.skill-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 30px rgba(0,255,255,0.12);
+}
+
+.skill-card h3{
+
+color:#00ffff;
+
+margin-bottom:1rem;
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-box{
+
+background:#0d1117;
+
+padding:3rem;
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+text-align:center;
+}
+
+.contact-buttons{
+
+margin-top:2rem;
+
+display:flex;
+
+justify-content:center;
+
+gap:1rem;
+
+flex-wrap:wrap;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+padding:2rem;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,0.08);
+
+color:#94a3b8;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+}
+
+.hero{
+
+padding-top:180px;
+}
+
+.terminal{
+
+height:650px;
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+padding:1rem 0;
+
+gap:1rem;
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+}
+
+.hero-buttons{
+
+flex-direction:column;
+}
+
+.btn{
+
+width:100%;
+
+text-align:center;
+}
+
+.section-title h2{
+
+font-size:2.5rem;
+}
+
+.terminal{
+
+height:580px;
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-left h1{
+
+font-size:2.8rem;
+}
+
+.typing{
+
+font-size:1.2rem;
+}
+
+.terminal{
+
+height:520px;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Rupesh Sirvi Choudhary</h1>
-            <h2>Security Tester</h2>
-        </header>
-        <nav class="nav">
-            <a href="#contact-info">Contact</a>
-            <a href="#profile-summary">Profile</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#work-experience">Experience</a>
-            <a href="#comments">Comments</a>
-        </nav>
-        <main>
-            <section id="contact-info" class="section">
-                <h3>Contact Information</h3>
-                <p><strong>Email:</strong> <a href="mailto:rupesh.sirvi.choudhary@gmail.com">rupesh.sirvi.choudhary@gmail.com</a></p>
-                <p><strong>Location:</strong> Ahmedabad, Gujarat</p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/rupesh-sirvi-8b171316b/" target="_blank">linkedin.com/in/rupesh-sirvi-8b171316b/</a></p>
-            </section>
-            <section id="profile-summary" class="section">
-                <h3>Profile Summary</h3>
-                <p>Recent postgraduate with a Master of Science in Network Security from Gujarat University and a Bachelor of Computer Applications (BCA) from JNVU, Jodhpur. Seeking a Security Tester position to leverage my skills in protecting computer systems and networks from cyberattacks. Proven ability to identify and mitigate security threats through vulnerability assessments and penetration tests.</p>
-            </section>
-            <section id="education" class="section">
-                <h3>Education</h3>
-                <p><strong>Gujarat University, Ahmedabad</strong><br>
-                Master of Science in Network Security (2022-2024)</p>
-                <p><strong>JNVU, Jodhpur</strong><br>
-                Bachelor of Computer Applications (2019-2022)</p>
-            </section>
-            <section id="skills" class="section">
-                <h3>Skills</h3>
-                <p><strong>Technical Skills:</strong><br>
-                Ethical Hacking, Network Security, Vulnerability Management, Digital Forensics, Firewall Configuration, Server Installation and Configuration, Database Management (MySQL, MariaDB), Cisco Networking (RIP Configuration, Routing), Network Route Monitoring</p>
-                <p><strong>Tools:</strong><br>
-                Active Directory Management, Network Monitoring Tools (Visio), OS and SAP Installation</p>
-                <p><strong>Languages:</strong><br>
-                Hindi, English</p>
-            </section>
-            <section id="work-experience" class="section">
-                <h3>Work Experience</h3>
-                <p><strong>App’s Tech Solution, Ahmedabad</strong><br>
-                Solution Engineer Intern (2024 - Present)</p>
-                <ul>
-                    <li><strong>Technical Support:</strong> Managed Active Directory (AD) tasks, assets, and Windows installations. Created and unlocked user accounts, resolved printer issues, and troubleshot network problems.</li>
-                    <li><strong>Client Engagements:</strong> Worked with clients such as TATA Gotion, Endurance Technologies, Maxxis, System Ceramics, and Investment Security. Addressed issues like PLC device connectivity, barcode printing, AD management, file server maintenance, and CCTV network problems.</li>
-                    <li><strong>Solution Implementation:</strong> Executed OS and SAP installations, downgraded Windows 11 to Windows 10. Implemented asset management solutions and resolved Outlook disconnected issues.</li>
-                </ul>
-            </section>
-            <section id="comments" class="section">
-                <h3>Leave a Comment</h3>
-                <form id="commentForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required><br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required><br>
-                    <label for="comment">Comment:</label>
-                    <textarea id="comment" name="comment" required></textarea><br>
-                    <button type="submit">Submit</button>
-                </form>
-            </section>
-        </main>
-    </div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+
+&lt;Rupesh/&gt;
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero"
+         id="home">
+
+<div class="container hero-grid">
+
+<!-- LEFT -->
+
+<div class="hero-left">
+
+<h3>
+
+AI • NETWORK • CYBERSECURITY
+
+</h3>
+
+<h1>
+
+Rupesh
+<span>Sirvi</span>
+
+</h1>
+
+<div class="typing"></div>
+
+<p>
+
+Advanced interactive AI terminal portfolio.
+Recruiters can use commands,
+browse directories,
+read files,
+and interact with a realistic Linux-style terminal experience.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact"
+   class="btn primary-btn">
+
+🚀 Hire Me
+
+</a>
+
+<a href="resume.pdf"
+   download
+   class="btn secondary-btn">
+
+📄 Download Resume
+
+</a>
+
+</div>
+
+</div>
+
+<!-- TERMINAL -->
+
+<div class="terminal">
+
+<div class="terminal-top">
+
+<div class="terminal-controls">
+
+<div class="dot red"></div>
+
+<div class="dot yellow"></div>
+
+<div class="dot green"></div>
+
+</div>
+
+<div class="terminal-title">
+
+root@rupesh-ai:~
+
+</div>
+
+</div>
+
+<div class="terminal-screen"
+     id="terminal">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-title">
+
+<p>TECH STACK</p>
+
+<h2>Technical Skills</h2>
+
+</div>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>Networking</h3>
+
+<p>
+
+VLAN,
+VPN,
+LAN/WAN,
+Cisco,
+Enterprise Infrastructure.
+
+</p>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Cybersecurity</h3>
+
+<p>
+
+Nmap,
+Wireshark,
+Metasploit,
+Security Testing.
+
+</p>
+
+</div>
+
+<div class="skill-card">
+
+<h3>System Administration</h3>
+
+<p>
+
+Linux,
+Windows Server,
+Monitoring,
+VMware.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<p>CONNECT</p>
+
+<h2>Hire & Contact</h2>
+
+</div>
+
+<div class="contact-box">
+
+<h2>
+
+Open For Opportunities
+
+</h2>
+
+<div class="contact-buttons">
+
+<a href="mailto:rupesh.sirvi.choudhary@gmail.com"
+   class="btn primary-btn">
+
+📧 Email Me
+
+</a>
+
+<a href="tel:+917296892705"
+   class="btn secondary-btn">
+
+📱 Call Me
+
+</a>
+
+<a href="https://linkedin.com"
+   target="_blank"
+   class="btn secondary-btn">
+
+🔗 LinkedIn
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Rupesh Sirvi • AI Interactive Portfolio
+
+</footer>
+
+<script>
+
+/* =====================================================
+   TYPING EFFECT
+===================================================== */
+
+const roles = [
+
+"Interactive Terminal Engineer",
+
+"Cybersecurity Enthusiast",
+
+"Linux Administrator",
+
+"AI Infrastructure Engineer"
+
+];
+
+let roleIndex = 0;
+
+let charIndex = 0;
+
+const typing =
+document.querySelector(".typing");
+
+function typeEffect(){
+
+if(charIndex < roles[roleIndex].length){
+
+typing.innerHTML +=
+roles[roleIndex].charAt(charIndex);
+
+charIndex++;
+
+setTimeout(typeEffect,90);
+
+}else{
+
+setTimeout(eraseEffect,1500);
+}
+
+}
+
+function eraseEffect(){
+
+if(charIndex > 0){
+
+typing.innerHTML =
+roles[roleIndex].substring(0,charIndex - 1);
+
+charIndex--;
+
+setTimeout(eraseEffect,40);
+
+}else{
+
+roleIndex++;
+
+if(roleIndex >= roles.length){
+
+roleIndex = 0;
+}
+
+setTimeout(typeEffect,300);
+}
+
+}
+
+typeEffect();
+
+/* =====================================================
+   TERMINAL ENGINE
+===================================================== */
+
+const terminal =
+document.getElementById("terminal");
+
+/* FILE SYSTEM */
+
+const fileSystem = {
+
+"/":{
+
+type:"dir",
+
+children:{
+
+"about.txt":{
+
+type:"file",
+
+content:`
+
+Rupesh Sirvi
+AI Infrastructure Engineer
+
+✔ Linux
+✔ Networking
+✔ Cybersecurity
+✔ Monitoring
+
+`
+
+},
+
+"skills.txt":{
+
+type:"file",
+
+content:`
+
+✔ Linux
+✔ VMware
+✔ VPN
+✔ VLAN
+✔ Monitoring
+✔ Routing
+✔ Security
+
+`
+
+},
+
+"tools.txt":{
+
+type:"file",
+
+content:`
+
+Nmap
+Wireshark
+Metasploit
+Cisco
+Linux
+Docker
+
+`
+
+},
+
+"projects":{
+
+type:"dir",
+
+children:{
+
+"monitoring.txt":{
+
+type:"file",
+
+content:`
+
+Enterprise Monitoring System
+
+`
+
+},
+
+"vlan.txt":{
+
+type:"file",
+
+content:`
+
+Advanced VLAN Infrastructure
+
+`
+
+}
+
+}
+
+}
+
+}
+
+}
+
+};
+
+let currentPath = ["/"];
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+function scrollBottom(){
+
+terminal.scrollTop =
+terminal.scrollHeight;
+}
+
+function getCurrentDir(){
+
+let current =
+fileSystem["/"];
+
+for(let i=1;i<currentPath.length;i++){
+
+const clean =
+currentPath[i].replace("/","");
+
+current =
+current.children[clean];
+}
+
+return current;
+}
+
+/* =====================================================
+   PRINT COMMAND
+===================================================== */
+
+function printCommand(command){
+
+const line =
+document.createElement("div");
+
+line.className = "line";
+
+line.innerHTML =
+
+`
+<div class="command-line">
+
+<span class="user">
+rupesh@ai
+</span>
+
+<span class="path">
+${currentPath.join("")}
+</span>
+
+<span class="symbol">
+$
+</span>
+
+<span class="command">
+${command}
+</span>
+
+</div>
+`;
+
+terminal.appendChild(line);
+
+scrollBottom();
+}
+
+/* =====================================================
+   PRINT OUTPUT
+===================================================== */
+
+function printOutput(text){
+
+const output =
+document.createElement("div");
+
+output.className = "output";
+
+output.innerHTML = text;
+
+terminal.appendChild(output);
+
+scrollBottom();
+}
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+function createInput(){
+
+const wrapper =
+document.createElement("div");
+
+wrapper.className =
+"input-wrapper";
+
+wrapper.innerHTML =
+
+`
+<span class="user">
+rupesh@ai
+</span>
+
+<span class="path">
+${currentPath.join("")}
+</span>
+
+<span class="symbol">
+$
+</span>
+
+<input type="text"
+       id="terminalInput"
+       autocomplete="off"
+       spellcheck="false">
+`;
+
+terminal.appendChild(wrapper);
+
+const input =
+document.getElementById("terminalInput");
+
+input.focus();
+
+input.addEventListener(
+"keydown",
+handleCommand
+);
+
+scrollBottom();
+}
+
+/* =====================================================
+   EXECUTE COMMAND
+===================================================== */
+
+function executeCommand(command){
+
+if(!command){
+
+printOutput("");
+
+return;
+}
+
+const args =
+command.split(" ");
+
+const cmd =
+args[0].toLowerCase();
+
+/* HELP */
+
+if(cmd === "help"){
+
+printOutput(`
+
+AVAILABLE COMMANDS:<br><br>
+
+help<br>
+ls<br>
+pwd<br>
+whoami<br>
+about<br>
+skills<br>
+tools<br>
+tree<br>
+cd [directory]<br>
+cat [file]<br>
+date<br>
+echo [text]<br>
+clear
+
+`);
+
+}
+
+/* WHOAMI */
+
+else if(cmd === "whoami"){
+
+printOutput(
+"rupesh-sirvi"
+);
+
+}
+
+/* PWD */
+
+else if(cmd === "pwd"){
+
+printOutput(
+currentPath.join("")
+);
+
+}
+
+/* ABOUT */
+
+else if(cmd === "about"){
+
+printOutput(`
+
+AI Infrastructure Engineer<br>
+Linux Administrator<br>
+Cybersecurity Enthusiast
+
+`);
+
+}
+
+/* SKILLS */
+
+else if(cmd === "skills"){
+
+printOutput(`
+
+✔ Linux<br>
+✔ Networking<br>
+✔ Monitoring<br>
+✔ Security<br>
+✔ VMware
+
+`);
+
+}
+
+/* TOOLS */
+
+else if(cmd === "tools"){
+
+printOutput(`
+
+Nmap<br>
+Wireshark<br>
+Metasploit<br>
+Cisco<br>
+Docker
+
+`);
+
+}
+
+/* DATE */
+
+else if(cmd === "date"){
+
+printOutput(
+new Date().toString()
+);
+
+}
+
+/* ECHO */
+
+else if(cmd === "echo"){
+
+printOutput(
+args.slice(1).join(" ")
+);
+
+}
+
+/* LS */
+
+else if(cmd === "ls"){
+
+const current =
+getCurrentDir();
+
+let output = "";
+
+for(let item in current.children){
+
+const file =
+current.children[item];
+
+if(file.type === "dir"){
+
+output +=
+`📁 ${item}<br>`;
+
+}else{
+
+output +=
+`📄 ${item}<br>`;
+}
+
+}
+
+printOutput(output);
+}
+
+/* TREE */
+
+else if(cmd === "tree"){
+
+printOutput(`
+
+/<br>
+├── about.txt<br>
+├── skills.txt<br>
+├── tools.txt<br>
+└── projects/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── monitoring.txt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;└── vlan.txt
+
+`);
+
+}
+
+/* CD */
+
+else if(cmd === "cd"){
+
+if(!args[1]){
+
+printOutput(
+"cd: missing directory"
+);
+
+return;
+}
+
+const dir =
+args[1];
+
+if(dir === ".."){
+
+if(currentPath.length > 1){
+
+currentPath.pop();
+}
+
+return;
+}
+
+const current =
+getCurrentDir();
+
+if(
+current.children[dir]
+&&
+current.children[dir].type === "dir"
+){
+
+currentPath.push(dir + "/");
+
+}else{
+
+printOutput(
+`cd: no such directory: ${dir}`
+);
+
+}
+
+}
+
+/* CAT */
+
+else if(cmd === "cat"){
+
+if(!args[1]){
+
+printOutput(
+"cat: missing file"
+);
+
+return;
+}
+
+const file =
+args[1];
+
+const current =
+getCurrentDir();
+
+if(
+current.children[file]
+&&
+current.children[file].type === "file"
+){
+
+printOutput(
+current.children[file].content
+);
+
+}else{
+
+printOutput(
+`cat: file not found: ${file}`
+);
+
+}
+
+}
+
+/* CLEAR */
+
+else if(cmd === "clear"){
+
+terminal.innerHTML = "";
+
+}
+
+/* INVALID */
+
+else{
+
+printOutput(`
+
+<span style="color:#ff4d4d">
+
+Command not found:
+${cmd}
+
+</span>
+
+Try:
+help
+
+`);
+
+}
+
+}
+
+/* =====================================================
+   HANDLE INPUT
+===================================================== */
+
+function handleCommand(e){
+
+if(e.key !== "Enter") return;
+
+const input =
+e.target;
+
+const command =
+input.value.trim();
+
+input.disabled = true;
+
+printCommand(command);
+
+executeCommand(command);
+
+input.parentElement.remove();
+
+createInput();
+}
+
+/* =====================================================
+   AUTO COMMANDS
+===================================================== */
+
+const bootCommands = [
+
+"whoami",
+
+"pwd",
+
+"ls",
+
+"cat about.txt",
+
+"skills",
+
+"tools",
+
+"tree",
+
+"help"
+
+];
+
+async function boot(){
+
+printOutput(`
+
+AI TERMINAL INITIALIZED ✔️<br>
+SECURE CONNECTION ESTABLISHED ✔️<br>
+SYSTEM ONLINE ✔️
+
+`);
+
+for(const cmd of bootCommands){
+
+await new Promise(resolve =>
+setTimeout(resolve,700)
+);
+
+printCommand(cmd);
+
+executeCommand(cmd);
+
+}
+
+createInput();
+}
+
+boot();
+
+</script>
+
 </body>
+
 </html>
