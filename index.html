@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html = r'''<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,9 +8,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
 margin:0;
 padding:0;
@@ -27,6 +32,10 @@ background:#020617;
 color:white;
 overflow-x:hidden;
 }
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 body::before{
 content:"";
@@ -52,10 +61,18 @@ left:-100px;
 z-index:-2;
 }
 
+/* =====================================================
+   CONTAINER
+===================================================== */
+
 .container{
 width:min(92%,1600px);
 margin:auto;
 }
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
 position:fixed;
@@ -96,6 +113,10 @@ transition:0.3s;
 .nav-links a:hover{
 color:#00ffff;
 }
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
 min-height:100vh;
@@ -139,6 +160,10 @@ line-height:1.9;
 color:#cbd5e1;
 }
 
+/* =====================================================
+   BUTTONS
+===================================================== */
+
 .hero-buttons{
 display:flex;
 gap:1rem;
@@ -177,6 +202,10 @@ transform:translateY(-5px);
 box-shadow:0 0 30px rgba(0,255,255,0.4);
 }
 
+/* =====================================================
+   TERMINAL
+===================================================== */
+
 .terminal{
 width:100%;
 height:760px;
@@ -210,9 +239,17 @@ height:14px;
 border-radius:50%;
 }
 
-.red{background:#ff5f56;}
-.yellow{background:#ffbd2e;}
-.green{background:#27c93f;}
+.red{
+background:#ff5f56;
+}
+
+.yellow{
+background:#ffbd2e;
+}
+
+.green{
+background:#27c93f;
+}
 
 .terminal-title{
 font-family:monospace;
@@ -249,10 +286,21 @@ gap:8px;
 flex-wrap:wrap;
 }
 
-.user{color:#00ff88;}
-.path{color:#38bdf8;}
-.symbol{color:white;}
-.command{color:white;}
+.user{
+color:#00ff88;
+}
+
+.path{
+color:#38bdf8;
+}
+
+.symbol{
+color:white;
+}
+
+.command{
+color:white;
+}
 
 .output{
 margin-top:8px;
@@ -287,6 +335,10 @@ font-size:15px;
 font-family:monospace;
 width:100%;
 }
+
+/* =====================================================
+   SKILLS
+===================================================== */
 
 section{
 padding:120px 0;
@@ -330,6 +382,10 @@ color:#00ffff;
 margin-bottom:1rem;
 }
 
+/* =====================================================
+   CONTACT
+===================================================== */
+
 .contact-box{
 background:#0d1117;
 padding:3rem;
@@ -346,6 +402,10 @@ gap:1rem;
 flex-wrap:wrap;
 }
 
+/* =====================================================
+   FOOTER
+===================================================== */
+
 footer{
 padding:2rem;
 text-align:center;
@@ -353,13 +413,19 @@ border-top:1px solid rgba(255,255,255,0.08);
 color:#94a3b8;
 }
 
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
 @media(max-width:1100px){
 .hero-grid{
 grid-template-columns:1fr;
 }
+
 .hero{
 padding-top:180px;
 }
+
 .terminal{
 height:650px;
 }
@@ -371,20 +437,25 @@ flex-direction:column;
 padding:1rem 0;
 gap:1rem;
 }
+
 .nav-links{
 flex-wrap:wrap;
 justify-content:center;
 }
+
 .hero-buttons{
 flex-direction:column;
 }
+
 .btn{
 width:100%;
 text-align:center;
 }
+
 .section-title h2{
 font-size:2.5rem;
 }
+
 .terminal{
 height:580px;
 }
@@ -394,9 +465,11 @@ height:580px;
 .hero-left h1{
 font-size:2.8rem;
 }
+
 .typing{
 font-size:1.2rem;
 }
+
 .terminal{
 height:520px;
 }
@@ -406,20 +479,34 @@ height:520px;
 
 <body>
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
 <div class="container navbar">
-<div class="logo">&lt;Rupesh/&gt;</div>
+
+<div class="logo">
+&lt;Rupesh/&gt;
+</div>
 
 <ul class="nav-links">
 <li><a href="#home">Home</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </div>
 </header>
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero" id="home">
 <div class="container hero-grid">
+
+<!-- LEFT -->
 
 <div class="hero-left">
 
@@ -446,14 +533,19 @@ and interact with a realistic Linux-style terminal experience.
 🚀 Hire Me
 </a>
 
-<a href="https://drive.google.com/uc?export=download&id=1lmfuAh9Rr6MhJbLW318sP75DTTJF006H"
+<!-- Google Drive safest resume link -->
+<a href="https://drive.google.com/file/d/1lmfuAh9Rr6MhJbLW318sP75DTTJF006H/view?usp=sharing"
+   target="_blank"
+   rel="noopener noreferrer"
    class="btn secondary-btn">
-📄 Download Resume
+📄 View / Download Resume
 </a>
 
 </div>
 
 </div>
+
+<!-- TERMINAL -->
 
 <div class="terminal">
 
@@ -477,6 +569,10 @@ root@rupesh-ai:~
 
 </div>
 </section>
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
 <section id="skills">
 <div class="container">
@@ -524,6 +620,10 @@ VMware.
 </div>
 </section>
 
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
 <section id="contact">
 <div class="container">
 
@@ -550,6 +650,7 @@ VMware.
 
 <a href="https://www.linkedin.com/in/rupesh-sirvi-8b171316b/"
    target="_blank"
+   rel="noopener noreferrer"
    class="btn secondary-btn">
 🔗 LinkedIn
 </a>
@@ -566,8 +667,26 @@ VMware.
 </footer>
 
 <script>
-const resumeDownloadLink = "https://drive.google.com/uc?export=download&id=1lmfuAh9Rr6MhJbLW318sP75DTTJF006H";
+/* =====================================================
+   RESUME LINKS
+===================================================== */
+
+/*
+IMPORTANT:
+Google Drive sometimes blocks forced direct downloads.
+That is why the main button opens the PDF viewer page.
+From there, anyone can click the download icon.
+
+Make sure Drive sharing is:
+Right click file → Share → General access → Anyone with the link → Viewer
+*/
+
 const resumeViewLink = "https://drive.google.com/file/d/1lmfuAh9Rr6MhJbLW318sP75DTTJF006H/view?usp=sharing";
+const resumeDirectDownloadLink = "https://drive.google.com/uc?export=download&id=1lmfuAh9Rr6MhJbLW318sP75DTTJF006H";
+
+/* =====================================================
+   TYPING EFFECT
+===================================================== */
 
 const roles = [
 "Interactive Terminal Engineer",
@@ -607,7 +726,13 @@ setTimeout(typeEffect,300);
 
 typeEffect();
 
+/* =====================================================
+   TERMINAL ENGINE
+===================================================== */
+
 const terminal = document.getElementById("terminal");
+
+/* FILE SYSTEM */
 
 const fileSystem = {
 "/":{
@@ -690,13 +815,15 @@ November 2023 – April 2024
 "resume.txt":{
 type:"file",
 content:`
-Resume Download Ready ✔️
+Resume Ready ✔️
 
-Google Drive Resume File:
+Google Drive Resume Page:
 ${resumeViewLink}
 
-Download Link:
-${resumeDownloadLink}
+Direct Download Link:
+${resumeDirectDownloadLink}
+
+If direct download does not start, open the resume page and click the download icon.
 `
 },
 "projects":{
@@ -745,22 +872,33 @@ Security Documentation
 
 let currentPath = ["/"];
 
+/* =====================================================
+   HELPERS
+===================================================== */
+
 function scrollBottom(){
 terminal.scrollTop = terminal.scrollHeight;
 }
 
 function getCurrentDir(){
 let current = fileSystem["/"];
+
 for(let i=1;i<currentPath.length;i++){
 const clean = currentPath[i].replace("/","");
 current = current.children[clean];
 }
+
 return current;
 }
+
+/* =====================================================
+   PRINT COMMAND
+===================================================== */
 
 function printCommand(command){
 const line = document.createElement("div");
 line.className = "line";
+
 line.innerHTML =
 `
 <div class="command-line">
@@ -770,9 +908,14 @@ line.innerHTML =
 <span class="command">${command}</span>
 </div>
 `;
+
 terminal.appendChild(line);
 scrollBottom();
 }
+
+/* =====================================================
+   PRINT OUTPUT
+===================================================== */
 
 function printOutput(text){
 const output = document.createElement("div");
@@ -782,9 +925,14 @@ terminal.appendChild(output);
 scrollBottom();
 }
 
+/* =====================================================
+   INPUT
+===================================================== */
+
 function createInput(){
 const wrapper = document.createElement("div");
 wrapper.className = "input-wrapper";
+
 wrapper.innerHTML =
 `
 <span class="user">rupesh@ai</span>
@@ -795,12 +943,19 @@ wrapper.innerHTML =
        autocomplete="off"
        spellcheck="false">
 `;
+
 terminal.appendChild(wrapper);
+
 const input = document.getElementById("terminalInput");
 input.focus();
 input.addEventListener("keydown", handleCommand);
+
 scrollBottom();
 }
+
+/* =====================================================
+   EXECUTE COMMAND
+===================================================== */
 
 function executeCommand(command){
 if(!command){
@@ -810,6 +965,8 @@ return;
 
 const args = command.split(" ");
 const cmd = args[0].toLowerCase();
+
+/* HELP */
 
 if(cmd === "help"){
 printOutput(`
@@ -832,13 +989,19 @@ clear
 `);
 }
 
+/* WHOAMI */
+
 else if(cmd === "whoami"){
 printOutput("rupesh-sirvi");
 }
 
+/* PWD */
+
 else if(cmd === "pwd"){
 printOutput(currentPath.join(""));
 }
+
+/* ABOUT */
 
 else if(cmd === "about"){
 printOutput(`
@@ -850,6 +1013,8 @@ Junior Security Analyst<br><br>
 Ahmedabad, Gujarat
 `);
 }
+
+/* SKILLS */
 
 else if(cmd === "skills"){
 printOutput(`
@@ -863,6 +1028,8 @@ printOutput(`
 ✔ VMware
 `);
 }
+
+/* TOOLS */
 
 else if(cmd === "tools"){
 printOutput(`
@@ -878,6 +1045,8 @@ VMware
 `);
 }
 
+/* EXPERIENCE */
+
 else if(cmd === "experience"){
 printOutput(`
 Junior System Administrator - TechMonarch Infocom LLP<br>
@@ -886,36 +1055,53 @@ Solution Engineer Internship - App's Tech Solutions
 `);
 }
 
+/* RESUME */
+
 else if(cmd === "resume"){
 printOutput(`
-Resume Download Ready ✔️<br><br>
-Latest Resume Hosted On Google Drive<br><br>
-<a href="${resumeDownloadLink}" target="_blank">📄 Download Resume</a><br>
-<a href="${resumeViewLink}" target="_blank">👁 View Resume</a>
+Resume Ready ✔️<br><br>
+Google Drive sometimes blocks forced direct download.<br>
+Use the safe resume page below:<br><br>
+
+<a href="${resumeViewLink}" target="_blank" rel="noopener noreferrer">📄 View / Download Resume</a><br><br>
+
+Optional direct download link:<br>
+<a href="${resumeDirectDownloadLink}" target="_blank" rel="noopener noreferrer">⬇ Try Direct Download</a>
 `);
 }
+
+/* DATE */
 
 else if(cmd === "date"){
 printOutput(new Date().toString());
 }
 
+/* ECHO */
+
 else if(cmd === "echo"){
 printOutput(args.slice(1).join(" "));
 }
 
+/* LS */
+
 else if(cmd === "ls"){
 const current = getCurrentDir();
 let output = "";
+
 for(let item in current.children){
 const file = current.children[item];
+
 if(file.type === "dir"){
 output += `📁 ${item}<br>`;
 }else{
 output += `📄 ${item}<br>`;
 }
 }
+
 printOutput(output);
 }
+
+/* TREE */
 
 else if(cmd === "tree"){
 printOutput(`
@@ -931,6 +1117,8 @@ printOutput(`
 &nbsp;&nbsp;&nbsp;&nbsp;└── security-testing.txt
 `);
 }
+
+/* CD */
 
 else if(cmd === "cd"){
 if(!args[1]){
@@ -956,6 +1144,8 @@ printOutput(`cd: no such directory: ${dir}`);
 }
 }
 
+/* CAT */
+
 else if(cmd === "cat"){
 if(!args[1]){
 printOutput("cat: missing file");
@@ -972,9 +1162,13 @@ printOutput(`cat: file not found: ${file}`);
 }
 }
 
+/* CLEAR */
+
 else if(cmd === "clear"){
 terminal.innerHTML = "";
 }
+
+/* INVALID */
 
 else{
 printOutput(`
@@ -986,6 +1180,10 @@ Try: help
 `);
 }
 }
+
+/* =====================================================
+   HANDLE INPUT
+===================================================== */
 
 function handleCommand(e){
 if(e.key !== "Enter") return;
@@ -1002,6 +1200,10 @@ input.parentElement.remove();
 
 createInput();
 }
+
+/* =====================================================
+   AUTO COMMANDS
+===================================================== */
 
 const bootCommands = [
 "whoami",
@@ -1037,4 +1239,10 @@ boot();
 </script>
 
 </body>
-</html>
+</html>'''
+
+path = "/mnt/data/index_fixed_resume.html"
+with open(path, "w", encoding="utf-8") as f:
+    f.write(html)
+
+path
